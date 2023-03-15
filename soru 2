@@ -1,0 +1,24 @@
+#include <stdio.h>
+   
+    int enkucuk(int dizi[], int a) {
+        int min=dizi[0]; // 1 operasyon
+        int b;
+        for (b=1; b<a; b++) {     // 1 operasyon (başlatma), n operasyon (döngü) => n + 1 operasyon
+            if (dizi[b]<min) {   // n - 1 operasyon (döngü)
+                min=dizi[b];  // n - 1 operasyon (döngü)
+                
+            }
+        }
+        return min; //1 operasyon
+    }
+
+    int main() {
+        int dizi[]={7,2,8,9,4};  // atama olduğu için 1 dir
+        int a=sizeof(dizi)/sizeof(dizi[0]);  //2 operasyon (sizeof ve bölme)
+        int min=enkucuk(dizi,a);    //1 operasyon (fonksiyon çağrısı)
+        printf("En kucuk deger: %d\n",min); //1 operasyon
+    
+    
+    return 0;  // 1 operasyon
+}
+ // T(n)= 3n+9 = n dir
